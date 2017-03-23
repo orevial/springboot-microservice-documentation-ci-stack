@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  nginx:
+    restart: always
+    build: nginx
+    container_name: nginx
+    ports:
+      - "8082:80"
+      - "8083:443"
+    volumes:
+      - /var/www/html/:/usr/share/nginx/html
+
