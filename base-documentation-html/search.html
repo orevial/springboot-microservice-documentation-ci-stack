@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Asciidoctor 1.5.4">
+    <title>Search</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/asciidoctor.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link href="css/search.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/search.js"></script>
+</head>
+<body class="article toc2 toc-left">
+<div id="header">
+    <h1>Search Results</h1>
+
+    <div id="toc" class="toc2">
+        <div id="toctitle">Filter Results</div>
+        <ul id="team-list">
+            <!-- Will be filled later with Ajax -->
+        </ul>
+    </div>
+</div>
+<div id="content">
+    <div id="search-input">
+        <div class="input-group col-md-12">
+            <input type="text" class="search-query form-control" placeholder="Search..." />
+                <span class="input-group-btn">
+                    <button class="btn btn-danger" type="button">
+                        <span class="fa fa-search fa-2x"></span>
+                    </button>
+                </span>
+        </div>
+    </div>
+
+    <div id="search-facets">
+        <div class="admonitionblock note">
+            <table>
+                <tbody>
+                <tr>
+                    <td class="icon">
+                        <i class="fa icon-note" title="Note"></i>
+                    </td>
+                    <td class="content"></td>
+                    <td class="clear-filter">
+                        <button type="button" class="btn btn-info btn-lg clear-filters">Clear filters</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="search-results">
+        <div class="intro">Found <span class="nb-results">0</span> results in <span class="took-time">0</span> ms</div>
+        <div class="results"></div>
+    </div>
+</div>
+</body>
+</html>
+
+

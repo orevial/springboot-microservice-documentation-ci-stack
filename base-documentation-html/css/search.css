@@ -1,0 +1,128 @@
+.clear {
+    clear: both;
+}
+
+/*
+ Search bar
+*/
+#search-bar {
+    position: absolute;
+    top: 25px;
+    right: 0px;
+    background-color: #7a2518;
+    height: 50px;
+    z-index: 20;
+}
+
+#search-bar .fa-search {
+    margin-top: 7px;
+    margin-left: 20px;
+    margin-right: 30px;
+    color: #FFFFFF;
+}
+
+#search-bar form {
+    position: absolute;
+    display: inline-block;
+    right: 80px;
+    width: 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    background-color: white;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    height: 100%;
+}
+
+#search-bar-input {
+    height: 100%;
+    width: 100%;
+    -webkit-transition: padding 0.4s ease-in-out;
+    transition: padding 0.4s ease-in-out;
+    border: 0;
+}
+
+#search-bar:hover form,
+#search-bar form.focused {
+    width: 500px;
+}
+
+#search-bar:hover #search-bar-input,
+#search-bar #search-bar-input:focus {
+    padding: 12px 20px 12px 20px;
+}
+
+#search-input {
+    margin:0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+#search-input .search-query {
+    margin-bottom: 0;
+    border-radius: 0px;
+    height: 50px;
+    padding: 12px 20px 12px 20px;
+    font-size: 110%;
+}
+
+#search-input button {
+    border: 0;
+    background: none;
+    /** belows styles are working good */
+    padding: 2px 5px;
+    margin-top: 2px;
+    position: relative;
+    left: -40px;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    border-radius: 0px;
+    color:#7a2518;
+}
+
+/*
+** Search results
+*/
+
+.search-query:focus + button {
+    z-index: 3;
+}
+
+#search-facets {
+    display: none;
+}
+
+#search-facets .info {
+    font-weight: bold;
+}
+
+#search-results {
+    margin-top: 20px;
+}
+
+.result-content-line em {
+    background-color: #fff5b6;
+}
+
+#search-results .intro {
+    font-size: 120%;
+    font-style: italic;
+}
+
+#search-results .intro .nb-results {
+    color: #ba3925;
+    font-weight: bold;
+}
+
+
+#search-results a {
+    color: #ba3925;
+}
+
+#search-results .result-content-line {
+    line-height: 25px;
+}
