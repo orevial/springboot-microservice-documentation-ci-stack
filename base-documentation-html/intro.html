@@ -2,14 +2,12 @@
 <html lang="en" class="first-level">
 <head>
     <meta charset="UTF-8">
-    <!--[if IE]>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Asciidoctor 1.5.4">
     <title>Documentation</title>
 
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/search.css">
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -33,28 +31,3 @@
     <div id="toc" class="toc2">
         <div id="toctitle">Projects<span class="toggle-toc fa fa-lg fa-times-circle"></span></div>
         <ul class="sectlevel1">
-            <li class="collapsible"><span class="fa level-1-caret fa-caret-down"></span><a href="#">&nbsp;Team 1</a>
-                <ul class="sectlevel2" style="display: block;">
-                    {{#projects}}
-                    <li class="{{classes}}"><a href="{{relativeUrl}}" target="doc-iframe">{{name}}</a>
-                        {{#hasVersions}}
-                        <a href="#" class="fa fa-ellipsis-h level-2-ellipsis"></a>
-                        <ul class="sectlevel3">
-                            {{#versions}}
-                            <li><a href="{{relativeUrl}}" target="doc-iframe">{{version}}</a></li>
-                            {{/versions}}
-                        </ul>
-                        {{/hasVersions}}
-                    </li>
-                    {{/projects}}
-                </ul>
-            </li>
-        </ul>
-    </div>
-</div>
-<div id="content" class="first-level" style="height:100%">
-    <iframe frameborder="0" style="overflow:hidden;" height="100%" width="100%" name="doc-iframe"
-            src="homepage.html"></iframe>
-</div>
-
-</body>
