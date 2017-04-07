@@ -1,9 +1,9 @@
 #!/bin/bash
 
-nginxBaseDir="/var/www/html"
+nginxBaseDir="/home/adminuser/workspace/html"
 indexFile="$nginxBaseDir/intro.html"
 baseDocumentationHtml="../base-documentation-html"
-workspace="/your/workspace/path/doc-artifacts"
+workspace="/home/adminuser/workspace/doc-artifacts"
 
 # Copy base documentation HTML to target Nginx dir
 cp -rf $baseDocumentationHtml/* $nginxBaseDir
@@ -14,19 +14,22 @@ echo "<li class=\"collapsible\"><span class=\"fa fa-caret-right level-1-caret\">
 
 # Publish all doc artifacts to target Nginx dir
 for zipfile in $workspace/*.zip; do
-    echo "Processing project $project"
+   filename=$(basename $zipfile)
+   projectName=$(echo "$filename" | sed 's/\(.*\)-[0-9]*\.[0-9]*\.[0-9]*-doc.zip/\1/')
+   projectNameWithVersion=$(echo "$filename" | sed 's/\(.*-[0-9]*\.[0-9])*\.[0-9]*\)-doc.zip/\1/')
 
-    projectName=$(basename $zipfile)
-    mkdir "$nginxBaseDir/team1/$projectName"
+    echo "Processing project $projectName"
+
+    mkdir -p "$nginxBaseDir/team1/$projectName"
     unzip -oq -d "$nginxBaseDir/team1/$projectName" $zipfile
 
-   "<li><a href=\"$projectName\" target=\"doc-iframe\">${projectName}</a></li>" >> $indexFile
+    echo "<li><a href=\"team1/$projectName/$projectNameWithVersion/intro.html\" target=\"doc-iframe\">${projectName}</a></li>" >> $indexFile
 done
 
 # Close projects + team lists anchors
 echo "</ul></li></ul>" >> $indexFile
 
 # Close HTML file anchors
-"</div></div><div id=\"content\" class=\"first-level\" style=\"height:100%\"><iframe frameborder=\"0\" style=\"overflow:hidden;\" height=\"100%\" width=\"100%\" name=\"doc-iframe\" src=\"homepage.html\"></iframe></div></body></html>" >> $indexFile
+echo "</div></div><div id=\"content\" class=\"first-level\" style=\"height:100%\"><iframe frameborder=\"0\" style=\"overflow:hidden;\" height=\"100%\" width=\"100%\" name=\"doc-iframe\" src=\"homepage.html\"></iframe></div></body></html>$
 
-
+echo "DONE"
